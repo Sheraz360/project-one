@@ -36,6 +36,10 @@ body {
     border-radius: 0;
 }
 
+.jumboSlogan {
+    color: var(--btnTxt)
+}
+
 .custom-font {
     font-family: "Copperplate Gothic", sans-serif !important;
 }
