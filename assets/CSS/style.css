@@ -1,41 +1,102 @@
-  .navbar-nav {
-    margin-left: auto;
-  }
+:root {
+    --drkTrm: #3e005d;
+    --mainColr: #8B00FF;
+    --lghtTrm: #b657ff;
+    --plsTxt: rgba(0, 0, 0, 0.581);
+}
 
-  .navbar-brand {
+.navbar {
+    background-color: #303030;
+    background-image: linear-gradient(to bottom, var(--mainColr), var(--drkTrm));
+    border-bottom: 1px solid #222222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-brand {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .jumbotron {
-    background: radial-gradient(ellipse at top left, #8B00FF, white);
+body {
+    background: radial-gradient(ellipse at top left, var(--mainColr) 45%, var(--drkTrm));
+}
+
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 5px;
+    background: none;
     color: white;
     font-family: 'Arial', sans-serif;
-    margin-right: 20px;
     border-radius: 0;
-  }
+}
 
-  .custom-font {
+.custom-font {
     font-family: "Copperplate Gothic", sans-serif !important;
-  }
+}
 
-  #topicSelect {
+#topicSelect {
     width: 90%;
-  }
-  
-  .custom-container {
+}
+
+.plus-button {
+    background: var(--lghtTrm);
+    background-image: linear-gradient(to bottom , var(--lghtTrm), var(--drkTrm));
+    transition: background 0.3s;
+    border: none;
+    color: var(--plsTxt)
+}
+
+.plus-button:hover {
+    background: var(--drkTrm);
+    background-image: linear-gradient(to bottom, var(--drkTrm), var(--lghtTrm));
+    color: var(--plsTxt);
+}
+
+.fa-minus {
+  background: linear-gradient(to bottom, rgb(172, 0, 69), rgb(181, 0, 0));
+  border: none;
+  color: var(--plsTxt);
+  transition: background 0.3s;
+}
+
+.fa-minus:hover {
+  color: var(--plsTxt);
+}
+
+
+
+.search-button {
+    background-color: var(--lghtTrm);
+    background-image: linear-gradient(to bottom, var(--lghtTrm), var(--drkTrm));
+    transition: background-color 0.3s;
+    border: none;
+    color: var(--plsTxt);
+}
+
+.search-button:hover {
+    background-color: var(--drkTrm);
+    background-image: linear-gradient(to bottom, var(--drkTrm), var(--lghtTrm));
+    color: var(--plsTxt);
+}
+
+.custom-container {
     height: 500px;
-    background-color: white;
+    background-color: rgb(217, 217, 217);
     border: 1px solid black;
     margin-top: 32px;
-  }
+    margin-bottom: 30px;
+}
 
-  .topicsForm {
+.topicsForm {
     margin-top: 32px;
-  }
-  
-  .navbar-brand:hover {
+}
+
+.navbar-brand:hover {
     text-shadow: 0 0 10px white;
-  }
-  
+}

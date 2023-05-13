@@ -34,6 +34,28 @@ function addNewRow(event) {
     // Create a new "fa-plus" button element
     var newPlusButton = document.createElement('button');
     newPlusButton.classList.add('btn', 'btn-outline-primary', 'ml-2', 'fa', 'fa-plus');
+    newPlusButton.addEventListener('click', addNewRow); // Attach event listener to the new plus button
+    
+    // Add the gradient background and hover effect
+    newPlusButton.style.background = 'var(--lghtTrm)';
+    newPlusButton.style.backgroundImage = 'linear-gradient(to bottom , var(--lghtTrm), var(--drkTrm))';
+    newPlusButton.style.transition = 'background 0.3s';
+    newPlusButton.style.border = 'none';
+    newPlusButton.style.color = 'var(--plsTxt)';
+
+    // Add the hover effect
+    newPlusButton.addEventListener('mouseover', function () {
+        newPlusButton.style.background = 'var(--drkTrm)';
+        newPlusButton.style.backgroundImage = 'linear-gradient(to bottom, var(--drkTrm), var(--lghtTrm))';
+        newPlusButton.style.color = 'var(--plsTxt)';
+    });
+
+    newPlusButton.addEventListener('mouseout', function () {
+        newPlusButton.style.background = 'var(--lghtTrm)';
+        newPlusButton.style.backgroundImage = 'linear-gradient(to bottom, var(--lghtTrm), var(--drkTrm))';
+        newPlusButton.style.color = 'var(--plsTxt)';
+    });
+
     newRow.appendChild(newPlusButton);
 
     // Create a new "fa-minus" button element
