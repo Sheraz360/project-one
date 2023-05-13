@@ -1,8 +1,8 @@
 :root {
-    --drkTrm: #3e005d;
     --mainColr: #8B00FF;
+    --drkTrm: #3e005d;
     --lghtTrm: #b657ff;
-    --plsTxt: rgba(0, 0, 0, 0.581);
+    --btnTxt: rgba(0, 0, 0, 0.581);
 }
 
 .navbar {
@@ -45,45 +45,74 @@ body {
 }
 
 .plus-button {
-    background: var(--lghtTrm);
-    background-image: linear-gradient(to bottom , var(--lghtTrm), var(--drkTrm));
-    transition: background 0.3s;
-    border: none;
-    color: var(--plsTxt)
+  background: var(--lghtTrm);
+  background-image: linear-gradient(to bottom, var(--lghtTrm), var(--drkTrm));
+  transition: background 0.3s;
+  border: none;
+  color: var(--btnTxt);
 }
 
 .plus-button:hover {
-    background: var(--drkTrm);
-    background-image: linear-gradient(to bottom, var(--drkTrm), var(--lghtTrm));
-    color: var(--plsTxt);
+  background: var(--drkTrm);
+  background-image: linear-gradient(to bottom, var(--drkTrm), var(--lghtTrm));
+  color: var(--btnTxt);
 }
 
 .fa-minus {
-  background: linear-gradient(to bottom, rgb(172, 0, 69), rgb(181, 0, 0));
-  border: none;
-  color: var(--plsTxt);
+  background: var(--drkTrm);
+  background-image: linear-gradient(to bottom, red, rgb(139, 0, 37));
   transition: background 0.3s;
+  border: none;
+  color: var(--btnTxt);
 }
 
 .fa-minus:hover {
-  color: var(--plsTxt);
+  background: var(--drkTrm);
+  background-image: linear-gradient(to bottom, rgb(139, 0, 37), red);
+  color: var(--btnTxt);
 }
-
-
 
 .search-button {
     background-color: var(--lghtTrm);
     background-image: linear-gradient(to bottom, var(--lghtTrm), var(--drkTrm));
     transition: background-color 0.3s;
     border: none;
-    color: var(--plsTxt);
+    color: var(--btnTxt);
 }
 
 .search-button:hover {
     background-color: var(--drkTrm);
     background-image: linear-gradient(to bottom, var(--drkTrm), var(--lghtTrm));
-    color: var(--plsTxt);
+    color: var(--btnTxt);
 }
+
+.clear-button {
+    background-color: transparent;
+    color: var(--btnTxt);
+    border: none;
+    transition: color 0.3s;
+}
+
+.clear-button:hover {
+    color: var(--drkTrm);
+}
+
+input[type="text"],
+input[type="date"],
+#topicSelect {
+    background-color: transparent;
+    color: var(--plsTxt);
+    transition: background-color 0.3s;
+}
+
+.topic-row select {
+    background-color: transparent;
+  }
+  
+  .topic-row select:focus,
+  .topic-row select:valid {
+    background-color: transparent !important;
+  }
 
 .custom-container {
     height: 500px;
