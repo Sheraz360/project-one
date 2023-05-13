@@ -1,5 +1,41 @@
-.custom-container {
+  .navbar-nav {
+    margin-left: auto;
+  }
+
+  .navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .jumbotron {
+    background: radial-gradient(ellipse at top left, #8B00FF, white);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin-right: 20px;
+    border-radius: 0;
+  }
+
+  .custom-font {
+    font-family: "Copperplate Gothic", sans-serif !important;
+  }
+
+  #topicSelect {
+    width: 90%;
+  }
+  
+  .custom-container {
     height: 500px;
     background-color: white;
     border: 1px solid black;
+    margin-top: 32px;
   }
+
+  .topicsForm {
+    margin-top: 32px;
+  }
+  
+  .navbar-brand:hover {
+    text-shadow: 0 0 10px white;
+  }
+  
