@@ -129,6 +129,10 @@ input[type="date"],
     text-align: center;
 }
 
+#bigTextModal {
+    margin-left: 45px;
+}
+
 .image-container {
     position: relative;
     max-width: 500px;
@@ -150,8 +154,8 @@ img.active {
     top: 50%;
     transform: translateY(-50%);
     font-size: 24px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.224);
+    color: var(--btnTxt);
     border: none;
     padding: 10px;
     cursor: pointer;
