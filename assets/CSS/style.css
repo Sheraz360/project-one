@@ -154,7 +154,7 @@ img.active {
     top: 50%;
     transform: translateY(-50%);
     font-size: 24px;
-    background-color: rgba(0, 0, 0, 0.224);
+    background-color: rgba(0, 0, 0, 0.24);
     color: var(--btnTxt);
     border: none;
     padding: 10px;

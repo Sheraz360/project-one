@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the initial "fa-plus" button and register a click event listener
+    // Add a click event listener to the plus button
     var addButton = document.querySelector('.fa-plus');
     addButton.addEventListener('click', addNewRow);
 });
@@ -11,17 +11,17 @@ var topics = Array.from(topicsSelect.options).map(function (option) {
 
 
 function addNewRow(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault();
 
-    // Create a new row element
+    // Create a new row element with bootstrap classes
     var newRow = document.createElement('div');
     newRow.classList.add('d-flex', 'align-items-center', 'mt-2', 'topic-row');
 
-    // Create a new select dropdown element
+    // Create a new select dropdown element with bootstrap classes
     var newSelect = document.createElement('select');
     newSelect.classList.add('form-control', 'topic-select');
 
-    // Populate the new dropdown with options
+    // Assign the new dropdown with the same content as the original
     for (var i = 0; i < topics.length; i++) {
         var option = document.createElement('option');
         option.text = topics[i];
@@ -30,13 +30,13 @@ function addNewRow(event) {
 
     newRow.appendChild(newSelect);
 
-    // Create a new "fa-plus" button element
+    // Create a new plus button with bootstrap & font awesome classes & event listener to execute the same add new row function again
     var newPlusButton = document.createElement('button');
     newPlusButton.classList.add('btn', 'btn-outline-primary', 'ml-2', 'fa', 'fa-plus', 'plus-button');
-    newPlusButton.addEventListener('click', addNewRow); // Attach event listener to the new plus button
+    newPlusButton.addEventListener('click', addNewRow);
     newRow.appendChild(newPlusButton);
 
-    // Create a new "fa-minus" button element
+    // Create a new minus button with bootstrap & font awesome classes
     var newMinusButton = document.createElement('button');
     newMinusButton.classList.add('btn', 'btn-outline-danger', 'ml-2', 'fa', 'fa-minus');
     newMinusButton.addEventListener('click', deleteRow);
@@ -60,12 +60,12 @@ function deleteRow(event) {
 
 // Search button
 document.addEventListener('DOMContentLoaded', function () {
-    // Get the search button and register a click event listener
+    // Add click event listener to the search button
     var searchButton = document.querySelector('.search-button');
     searchButton.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the form submission
 
-        // Open the modal manually
+        // Open the modal
         var modal = document.getElementById('exampleModalCenter');
         var modalInstance = new bootstrap.Modal(modal);
         modalInstance.show();
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Modal arrow buttons
+// Modal arrow buttons function which changes the "active" classto the selection of images
 document.addEventListener('DOMContentLoaded', function () {
     var images = document.querySelectorAll('.image-container img');
     var currentIndex = 0;
