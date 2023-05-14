@@ -17,10 +17,9 @@
     margin-left: auto;
 }
 
-.navbar-brand {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navbar-brand img {
+    height: 35px;
+    width: auto;
 }
 
 body {
@@ -34,6 +33,11 @@ body {
     color: white;
     font-family: 'Arial', sans-serif;
     border-radius: 0;
+}
+
+.jumbotron img {
+    height: 100px;
+    width: auto;
 }
 
 .jumboSlogan {
@@ -60,39 +64,39 @@ input[type="date"],
 .topic-row select {
     background-color: transparent;
     border-color: black;
-  }
-  
-  .topic-row select:focus,
-  .topic-row select:valid {
+}
+
+.topic-row select:focus,
+.topic-row select:valid {
     background-color: transparent !important;
-  }
+}
 
 .plus-button {
-  background: var(--lghtTrm);
-  background-image: linear-gradient(to bottom, var(--lghtTrm), var(--drkTrm));
-  transition: background 0.3s;
-  border: none;
-  color: var(--btnTxt);
+    background: var(--lghtTrm);
+    background-image: linear-gradient(to bottom, var(--lghtTrm), var(--drkTrm));
+    transition: background 0.3s;
+    border: none;
+    color: var(--btnTxt);
 }
 
 .plus-button:hover {
-  background: var(--drkTrm);
-  background-image: linear-gradient(to bottom, var(--drkTrm), var(--lghtTrm));
-  color: var(--btnTxt);
+    background: var(--drkTrm);
+    background-image: linear-gradient(to bottom, var(--drkTrm), var(--lghtTrm));
+    color: var(--btnTxt);
 }
 
 .fa-minus {
-  background: var(--drkTrm);
-  background-image: linear-gradient(to bottom, red, rgb(139, 0, 37));
-  transition: background 0.3s;
-  border: none;
-  color: var(--btnTxt);
+    background: var(--drkTrm);
+    background-image: linear-gradient(to bottom, red, rgb(139, 0, 37));
+    transition: background 0.3s;
+    border: none;
+    color: var(--btnTxt);
 }
 
 .fa-minus:hover {
-  background: var(--drkTrm);
-  background-image: linear-gradient(to bottom, rgb(139, 0, 37), red);
-  color: var(--btnTxt);
+    background: var(--drkTrm);
+    background-image: linear-gradient(to bottom, rgb(139, 0, 37), red);
+    color: var(--btnTxt);
 }
 
 .search-button {
@@ -119,30 +123,29 @@ input[type="date"],
 .clear-button:hover {
     color: var(--drkTrm);
 }
-  
-  .modal-title {
+
+.modal-title {
     margin: 0 auto;
     text-align: center;
-  }
-  
+}
 
 .image-container {
     position: relative;
     max-width: 500px;
     margin: 0 auto;
-  }
-  
-  img {
+}
+
+.image-container img {
     display: none;
     max-width: 100%;
     height: auto;
-  }
-  
-  img.active {
+}
+
+img.active {
     display: block;
-  }
-  
-  .arrow {
+}
+
+.arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -152,15 +155,15 @@ input[type="date"],
     border: none;
     padding: 10px;
     cursor: pointer;
-  }
-  
-  .left-arrow {
+}
+
+.left-arrow {
     left: 10px;
-  }
-  
-  .right-arrow {
+}
+
+.right-arrow {
     right: 10px;
-  }  
+}
 
 .custom-container {
     height: 500px;
