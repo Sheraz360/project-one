@@ -48,6 +48,25 @@ body {
     width: 90%;
 }
 
+input[type="text"],
+input[type="date"],
+#topicSelect {
+    background-color: transparent;
+    color: var(--plsTxt);
+    transition: background-color 0.3s;
+    border-color: black;
+}
+
+.topic-row select {
+    background-color: transparent;
+    border-color: black;
+  }
+  
+  .topic-row select:focus,
+  .topic-row select:valid {
+    background-color: transparent !important;
+  }
+
 .plus-button {
   background: var(--lghtTrm);
   background-image: linear-gradient(to bottom, var(--lghtTrm), var(--drkTrm));
@@ -100,25 +119,48 @@ body {
 .clear-button:hover {
     color: var(--drkTrm);
 }
-
-input[type="text"],
-input[type="date"],
-#topicSelect {
-    background-color: transparent;
-    color: var(--plsTxt);
-    transition: background-color 0.3s;
-    border-color: black;
-}
-
-.topic-row select {
-    background-color: transparent;
-    border-color: black;
+  
+  .modal-title {
+    margin: 0 auto;
+    text-align: center;
   }
   
-  .topic-row select:focus,
-  .topic-row select:valid {
-    background-color: transparent !important;
+
+.image-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
   }
+  
+  img {
+    display: none;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  img.active {
+    display: block;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .left-arrow {
+    left: 10px;
+  }
+  
+  .right-arrow {
+    right: 10px;
+  }  
 
 .custom-container {
     height: 500px;
