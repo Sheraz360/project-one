@@ -36,7 +36,8 @@
 
     <div class="container-fluid px-0"></div>
     <div class="jumbotron text-center m-0 custom-jumbotron">
-        <a class="display-4 custom-font"><img src="./assets/Images/Jumbo logo (stretched).png" height="100" alt="The Voice Of Reason"></a>
+        <a class="display-4 custom-font"><img src="./assets/Images/Jumbo logo (stretched).png" height="100"
+                alt="The Voice Of Reason"></a>
         <hr class="my-8">
         <p class="jumboSlogan">Unfiltered & Unapologetic.</p>
     </div>
@@ -70,9 +71,37 @@
                         <label for="endDate">End Date</label>
                         <input type="date" class="form-control" id="endDate">
                     </div>
-                    <button type="submit" class="btn btn-primary search-button">
+                    <button type="submit" class="btn btn-primary search-button" data-toggle="modal"
+                        data-target="#exampleModalCenter">
                         <i class="fas fa-search"></i> Search
                     </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLongTitle">IT'S YOUR LUCKY DAY!</h3>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6>Our friends over at Hellaclean are having a huge sale!!</h6>
+                                    <h5>TVOR would like to offer you a discount code for 30% off your next 3 purchases from our good friends at HellaClean. </h5>
+                                    <h4>How does that sound?</h4>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Sounds
+                                        great!</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No, thank
+                                        you</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <button type="button" class="btn btn-outline-danger clear-button">
                         <i class="fas fa-trash-alt"></i> Clear All
                     </button>

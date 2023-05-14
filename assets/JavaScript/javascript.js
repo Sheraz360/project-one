@@ -52,7 +52,6 @@ function addNewRow(event) {
     topicSelectRow.parentNode.insertBefore(newRow, topicSelectRow.nextSibling);
 }
 
-
 function deleteRow(event) {
     // Get the parent row element
     var row = event.target.closest('.topic-row');
@@ -60,3 +59,17 @@ function deleteRow(event) {
     // Remove the row from the DOM
     row.remove();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Get the search button and register a click event listener
+    var searchButton = document.querySelector('.search-button');
+    searchButton.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent the form submission
+  
+      // Open the modal manually
+      var modal = document.getElementById('exampleModalCenter');
+      var modalInstance = new bootstrap.Modal(modal);
+      modalInstance.show();
+    });
+  });
+  
