@@ -69,6 +69,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var modal = document.getElementById('exampleModalCenter');
         var modalInstance = new bootstrap.Modal(modal);
         modalInstance.show();
+        // Call the data from the API
+        var data = $.ajax({
+            url: "https://poetrydb.org/author,title/Shakespeare;Sonnet",
+            context: document.body,
+            success: function (data) {
+                console.log(data[0].lines);
+                $(".custom-container").text(data[0].lines);
+            }
+        })
     });
 });
 
@@ -114,3 +123,19 @@ document.addEventListener('DOMContentLoaded', function () {
     showImage(currentIndex);
 });
 
+//API Start ------------------------------
+
+// var data = $.ajax({
+//     url: "https://poetrydb.org/author,title/Shakespeare;Sonnet",
+//     context: document.body,
+//     success: function (data) {
+//         console.log(data[0].lines);
+//         $(".custom-container").text(data[0].lines);
+//     }
+// });
+
+    
+
+    //https://poetrydb.org/author,title/Shakespeare;Sonnet
+    //https://poetrydb.org/author/Emily Dickinson/title
+    //https://poetrydb.org/author

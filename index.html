@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>TVOR - Newsfeed</title>
+    <title>TVOR - World of Poetry</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -13,7 +13,8 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="./assets/Images/TVOR nav logo clear.png" class="img-fluid" style="max-width: 100%;" alt="TVOR logo">
+            <img src="./assets/Images/TVOR nav logo clear.png" class="img-fluid" style="max-width: 100%;"
+                alt="TVOR logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,8 +38,9 @@
     <div class="container-fluid px-0"></div>
     <div class="jumbotron text-center m-0 custom-jumbotron">
         <a class="display-4 custom-font d-flex justify-content-center">
-            <img src="./assets/Images/Jumbo logo (stretched).png" class="img-fluid" style="max-width: 100%; height: auto;" alt="The Voice Of Reason">
-          </a>          
+            <img src="./assets/Images/Jumbo logo (stretched).png" class="img-fluid"
+                style="max-width: 100%; height: auto;" alt="The Voice Of Reason">
+        </a>
         <hr class="my-8">
         <p class="jumboSlogan">Unfiltered & Unapologetic.</p>
     </div>
@@ -48,7 +50,7 @@
             <div class="col-md-4">
                 <form>
                     <div class="form-group">
-                        <h5 for="topicSelect">Topics</h5>
+                        <h5 for="topicSelect">Author</h5>
                         <div class="d-flex align-items-center">
                             <select class="form-control" id="topicSelect">
                                 <option></option>
@@ -64,13 +66,12 @@
                             </button>
                         </div>
                     </div>
-                    <h5 class="formSubHead">Date of Publication</h5>
                     <div class="form-group">
-                        <label for="startDate" id="startHead">From</label>
+                        <label class="form-head" for="startDate" id="startHead">Title</label>
                         <input type="date" class="form-control" id="startDate">
                     </div>
                     <div class="form-group">
-                        <label for="endDate">To</label>
+                        <label class="form-head" for="endDate">Linecount</label>
                         <input type="date" class="form-control" id="endDate">
                     </div>
                     <button type="submit" class="btn btn-primary search-button" data-toggle="modal"
@@ -84,7 +85,8 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <img src="./assets/Images/HellaClean Logo Plain.png" height="60" class="logo-plain" alt="HellaClean small round logo">
+                                    <img src="./assets/Images/HellaClean Logo Plain.png" height="60" class="logo-plain"
+                                        alt="HellaClean small round logo">
                                     <h3 class="modal-title bigTextModal" id="bigTextModal">IT'S YOUR LUCKY DAY!</h3>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -96,14 +98,20 @@
                                 <div class="modal-body">
                                     <div class="image-container">
                                         <button class="arrow left-arrow">&larr;</button>
-                                        <img src="./assets/Images/Advert logo main.jpg" height="600" alt="HellaClean Logo w/ Sneakers Backdrop" class="active">
-                                        <img src="./assets/Images/JJ Bagged square.jpg" width="600" alt="LV Sneakers clean and bagged w/ HellaClean Sticker">
-                                        <img src="./assets/Images/B&A JJ Side qtr.jpg" width="600" alt="LV Sneakers before and after w/ HellaClean text logo">
-                                        <img src="./assets/Images/BEFORE JJ Soles.jpg" width="600" alt="LV Sneakers outsoles dirty w/ HellaClean circle logo">
-                                        <img src="./assets/Images/AFTER JJ Soles.jpg" width="600" alt="LV Sneakers outsoles clean w/ HellaClean circle logo">
-                                        <img src="./assets/Images/B&A Guava soles.jpg" width="600" alt="Jordan 1 Guava Ice Low outsoles before and after w/ HellaClean text logo">
+                                        <img src="./assets/Images/Advert logo main.jpg" height="600"
+                                            alt="HellaClean Logo w/ Sneakers Backdrop" class="active">
+                                        <img src="./assets/Images/JJ Bagged square.jpg" width="600"
+                                            alt="LV Sneakers clean and bagged w/ HellaClean Sticker">
+                                        <img src="./assets/Images/B&A JJ Side qtr.jpg" width="600"
+                                            alt="LV Sneakers before and after w/ HellaClean text logo">
+                                        <img src="./assets/Images/BEFORE JJ Soles.jpg" width="600"
+                                            alt="LV Sneakers outsoles dirty w/ HellaClean circle logo">
+                                        <img src="./assets/Images/AFTER JJ Soles.jpg" width="600"
+                                            alt="LV Sneakers outsoles clean w/ HellaClean circle logo">
+                                        <img src="./assets/Images/B&A Guava soles.jpg" width="600"
+                                            alt="Jordan 1 Guava Ice Low outsoles before and after w/ HellaClean text logo">
                                         <button class="arrow right-arrow">&rarr;</button>
-                                      </div>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Sounds
@@ -129,7 +137,8 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="assets/JavaScript/javascript.js"></script>
