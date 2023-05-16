@@ -81,6 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+    //https://poetrydb.org/author,title/Shakespeare;Sonnet
+    //https://poetrydb.org/author/Emily Dickinson/title
+    //https://poetrydb.org/author
 
 // Modal arrow buttons function which changes the "active" classto the selection of images
 document.addEventListener('DOMContentLoaded', function () {
@@ -122,20 +125,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showImage(currentIndex);
 });
-
-//API Start ------------------------------
-
-// var data = $.ajax({
-//     url: "https://poetrydb.org/author,title/Shakespeare;Sonnet",
-//     context: document.body,
-//     success: function (data) {
-//         console.log(data[0].lines);
-//         $(".custom-container").text(data[0].lines);
-//     }
-// });
-
-    
-
-    //https://poetrydb.org/author,title/Shakespeare;Sonnet
-    //https://poetrydb.org/author/Emily Dickinson/title
-    //https://poetrydb.org/author
