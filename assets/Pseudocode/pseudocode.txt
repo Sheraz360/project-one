@@ -1,0 +1,27 @@
+1. Create a HTML linked to my CSS and JavaScript file and also include any necessary CSS and JavaScript libraries (Bootstrap, jQuery, FontAwesome).
+
+2. Build the HTML structure:
+   a. Create a navigation bar with the company logo and menu choices.
+   b. Add a jumbotron with a large logo and slogan.
+   c. Create a form with three inputs: Author, Title (optional), and Linecount (optional).
+   d. Include a container element next to the form to display the results from the API.
+
+3. Write JavaScript code to handle user interaction and API requests:
+   a. Attach event listeners to the menu choices.
+   b. When a choice is selected:
+      - Send an AJAX request to the API, passing the selected choice and form inputs as parameters.
+      - Retrieve the response data.
+      - Format the data to display in the container element.
+      - Update the container element with the formatted data.
+
+4. Use CSS to style the app:
+   a. Customize the navigation bar, jumbotron, form, and container to match your desired design.
+   b. Apply appropriate font, color, and layout styles.
+
+5. Test the app:
+   a. Verify that the form inputs are submitted correctly to the API.
+   b. Check if the API response is displayed properly in the container.
+
+6. Deploy the app
+
+7. Continuously update and improve the app based on user feedback and requirements.

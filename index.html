@@ -52,7 +52,7 @@
                     <div class="form-group">
                         <h5 for="topicSelect">Author</h5>
                         <div class="d-flex align-items-center">
-                            <select class="form-control" id="topicSelect">
+                            <select class="form-control" id="topicSelect" onchange="getAuthorTitles()">
                             </select>
                             <button class="btn btn-outline-primary ml-2 plus-button" type="button">
                                 <i class="fas fa-plus"></i>
@@ -60,13 +60,14 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-head" for="startDate" id="startHead">Title</label>
-                        <input type="date" class="form-control" id="startDate">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-head" for="endDate">Linecount</label>
-                        <input type="date" class="form-control" id="endDate">
-                    </div>
+                        <label class="form-head" for="titleSelect">Title</label>
+                        <select class="form-control custom-select" id="titleSelect"></select>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="form-head" for="lineCountSelect">Line Count</label>
+                        <select class="form-control custom-select" id="lineCountSelect"></select>
+                      </div>                      
                     <button type="submit" class="btn btn-primary search-button" data-toggle="modal"
                         data-target="#exampleModalCenter">
                         <i class="fas fa-search"></i> Search

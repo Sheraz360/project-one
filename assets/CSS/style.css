@@ -61,8 +61,7 @@ body {
     color: inherit;
 }
 
-input[type="text"],
-input[type="date"],
+.custom-select,
 #topicSelect {
     background-color: transparent;
     color: var(--plsTxt);
@@ -73,6 +72,11 @@ input[type="date"],
 .topic-row select {
     background-color: transparent;
     border-color: black;
+    color: var(--plsTxt);
+}
+
+.form-control:focus {
+    background-color: transparent;
 }
 
 .topic-row select:focus,
