@@ -49,5 +49,3 @@ This project is licensed under the MIT License. For more information, refer to t
 
 - Repository: [https://github.com/Sheraz360/project-one](https://github.com/Sheraz360/project-one)
 - Deployed URL: [https://sheraz360.github.io/project-one/#](https://sheraz360.github.io/project-one/#)
-
-Feel free to reach out if you have any further questions. Enjoy using TVOR - The Voice Of Reason!
