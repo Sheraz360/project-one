@@ -1,20 +1,83 @@
 document.addEventListener('DOMContentLoaded', function () {
+
   var addButton = document.querySelector('.fa-plus');
   addButton.addEventListener('click', addNewRow);
+
+  const listConElement = document.querySelector('.list-con');
+
+  // Retrieve data from local storage
+  const storedList = localStorage.getItem('myList');
+  const myList = storedList ? JSON.parse(storedList) : [];
+
+  // Clear the existing content of "list-con"
+  listConElement.innerHTML = '';
+
+  // Display the data in "list-con"
+  myList.forEach(function (item) {
+    const listItem = document.createElement('div');
+    listItem.textContent = item.title; // Modify this according to the structure of your data
+
+    // Add hover and click event listeners to each list item
+    listItem.addEventListener('mouseenter', function () {
+      listItem.classList.add('highlight');
+    });
+
+    listItem.addEventListener('mouseleave', function () {
+      listItem.classList.remove('highlight');
+    });
+
+    listItem.addEventListener('click', function () {
+      fillPoemCont(item);
+    });
+
+    listConElement.appendChild(listItem);
+  });
+
+  // Fill the "poem-cont" container with the selected poem
+  function fillPoemCont(item) {
+    const poemContainer = document.querySelector('.poem-cont');
+    poemContainer.innerHTML = ''; // Clear the existing content
+
+    const poemTitle = document.createElement('h3');
+    poemTitle.textContent = item.title;
+
+    const poemAuthor = document.createElement('h6');
+    poemAuthor.textContent = item.author;
+
+    const poemLineCount = document.createElement('h6');
+    poemLineCount.textContent = item.linecount;
+
+    const poemContent = document.createElement('p');
+    poemContent.innerHTML = item.lines.join('<br>');
+
+    const addToMyListButton = document.createElement('button');
+    addToMyListButton.textContent = 'Add to My List';
+    addToMyListButton.classList.add('btn', 'btn-outline-primary', 'ml-2', 'add-to-list-button');
+    addToMyListButton.addEventListener('click', function () {
+      addToMyList(poem);
+      addToMyListButton.textContent = 'Remove from My List';
+      addToMyListButton.disabled = true;
+    });
+
+
+    poemContainer.appendChild(poemTitle);
+    poemContainer.appendChild(poemAuthor);
+    poemContainer.appendChild(poemLineCount);
+    poemContainer.appendChild(poemContent);
+    poemContainer.appendChild(addToMyListButton);
+  }
 
   $("button.clear-button").click(function (event) {
     event.preventDefault();
     var poemContainer = $(".poem-cont");
     poemContainer.empty();
     poemContainer.css("background-color", "transparent");
-  
     // Reset the form to its original state
     $(".topicsForm")[0].reset();
     poemContainer.css("background-color", "transparent");
-  
-    // Rest of the code...
+
   });
-  
+
   var topicsSelect = document.getElementById('topicSelect');
   var topics = Array.from(topicsSelect.options).map(function (option) {
     return option.value;
@@ -83,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var selectedAuthor = document.getElementById('topicSelect').value;
     var endpointURL = "https://poetrydb.org/author/" + selectedAuthor;
-    var endpointURLTitle = "https://poetrydb.org/author/" + selectedAuthor +"/title";
+    var endpointURLTitle = "https://poetrydb.org/author/" + selectedAuthor + "/title";
 
     function fetchPoetry() {
       $.ajax({
@@ -107,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   $(this).css("cursor", "auto");
                 }
               )
+
               .click(function () {
                 poemContainer.empty();
                 var backButton = $("<button>")
@@ -119,12 +183,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 var titleWrapper = $("<div>").addClass("d-flex align-items-center justify-content-between");
                 var titleColumn = $("<div>").addClass("col pl-0");
                 var backButtonColumn = $("<div>").addClass("col-auto");
+                var addToMyListButton = $("<button>")
+                  .text("Add to My List")
+                  .addClass("btn btn-outline-primary ml-2 add-to-list-button")
+                  .click(function () {
+                    addToMyList(poem);
+                  });
+
+                function addToMyList(poem) {
+                  var savedList = localStorage.getItem('myList');
+                  var myList = savedList ? JSON.parse(savedList) : [];
+
+                  var isPoemInList = myList.some(function (savedPoem) {
+                    return savedPoem.title === poem.title && savedPoem.author === poem.author;
+                  });
+
+                  if (!isPoemInList) {
+                    myList.push(poem);
+                    localStorage.setItem('myList', JSON.stringify(myList));
+
+                    $(".add-to-list-button").text("Remove from My List").prop("disabled", true);
+                  }
+                }
+
 
                 titleColumn.append(poemTitle);
                 backButtonColumn.append(backButton);
                 titleWrapper.append(titleColumn, backButtonColumn);
 
-                poemContainer.append(titleWrapper, poemAuthor, poemLineCount, poemContent);
+                poemContainer.append(titleWrapper, poemAuthor, poemLineCount, poemContent, addToMyListButton);
 
               });
             var poemAuthor = $("<h4>").text(poem.author);
@@ -160,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
       error: function (error) {
         console.log("Error fetching authors:", error);
       }
-      
+
     });
   }
 
@@ -168,21 +255,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//----------------------
+  //----------------------
   document.querySelector('.custom-left-container').addEventListener('click', async () => {
     try {
       const response = await fetch('https://poetrydb.org/random');
       const data = await response.json();
-  
+
       if (data && data.length > 0) {
         const poemContainer = document.querySelector('.poem-cont');
-        poemContainer.textContent = data[0].lines.join('\n');
+        poemContainer.innerHTML = ''; // Clear the poem container
+
+        const poem = data[0];
+
+        const poemTitle = document.createElement('h3');
+        poemTitle.textContent = poem.title;
+
+        const poemAuthor = document.createElement('h6');
+        poemAuthor.textContent = poem.author;
+
+        const poemLineCount = document.createElement('h6');
+        poemLineCount.textContent = poem.linecount;
+
+        const poemContent = document.createElement('p');
+        poemContent.innerHTML = poem.lines.join('<br>'); // Join lines with line breaks
+
+        const addToMyListButton = document.createElement('button');
+        addToMyListButton.textContent = 'Add to My List';
+        addToMyListButton.classList.add('btn', 'btn-outline-primary', 'ml-2', 'add-to-list-button');
+        addToMyListButton.addEventListener('click', function () {
+          addToMyList(poem);
+          addToMyListButton.textContent = 'Remove from My List';
+          addToMyListButton.disabled = true;
+        });
+
+        poemContainer.appendChild(poemTitle);
+        poemContainer.appendChild(poemAuthor);
+        poemContainer.appendChild(poemLineCount);
+        poemContainer.appendChild(poemContent);
+        poemContainer.appendChild(addToMyListButton);
       }
     } catch (error) {
       console.error('Error fetching data:', error);
     }
-  });  
-//--------------------
+  });
+  //--------------------
 
 
 

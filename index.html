@@ -26,10 +26,18 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle list-style" type="button" id="myListDropdown" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            My List
+                        </button>
+                        <div class="dropdown-menu list-con" aria-labelledby="myListDropdown" id="myliststyle">
+                        </div>
+                    </div>
                 </li>
+                
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">Log In</a>
                 </li>
             </ul>
         </div>
@@ -130,7 +138,7 @@
                       <div class="small-cont custom-left-container">
                         <h3>Poem Of The Day</h3>
                       </div>
-                      
+            
                       <div class="small-cont custom-right-container">
                         <h3>Authors of the Day</h3>
                       </div>
@@ -145,6 +153,7 @@
             </div>
         </div>
     </div>
+    
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>

@@ -22,6 +22,26 @@
     width: auto;
 }
 
+#myliststyle {
+    padding: 10px;
+    background-color: var(--lghtTrm);
+}
+
+#myliststyle:hover {
+    cursor: pointer;
+}
+
+.list-style {
+    background-color: transparent;
+    border: none;
+    padding-bottom: none;
+}
+
+.list-style:hover {
+    cursor: pointer;
+    background-color: transparent;
+}
+
 body {
     background: radial-gradient(ellipse at top left, var(--mainColr) 45%, var(--drkTrm));
 }
@@ -216,9 +236,9 @@ img.active {
 
 .small-cont {
     width: calc(50% - 5px);
-    height: 195px;
+    height: 100px;
     margin-bottom: 10px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(86, 0, 129, 0.491), rgba(0, 0, 0, 0));
+    background-color: transparent;
 }
 
 .custom-left-container {
@@ -234,6 +254,10 @@ img.active {
     color: #2b0025bb;
     text-align: center;
     justify-content: center;
+}
+
+.custom-left-container:hover{
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(86, 0, 129, 0.491), rgba(0, 0, 0, 0));
 }
 
 .custom-right-container {
@@ -253,6 +277,10 @@ img.active {
 
 .custom-right-container p {
     margin-top: none;
+}
+
+.custom-right-container:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(86, 0, 129, 0.491), rgba(0, 0, 0, 0));
 }
 
 
