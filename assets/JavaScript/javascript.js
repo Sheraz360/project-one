@@ -83,6 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
     return option.value;
   });
 
+
+    // Plus button functions which create a new row, plus button and minus--------------------------
+
   function addNewRow(event) {
     event.preventDefault();
     var addButton = document.querySelector('.fa-plus');
@@ -136,6 +139,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var row = event.target.closest('.topic-row');
     row.remove();
   }
+
+  //--------------------------------------------------------------------------------------------------
+
+
+
+
+  // Search button functions which retrieve the data from the API and create modal--------------------
 
   var searchButton = document.querySelector('.search-button');
   searchButton.addEventListener('click', function (event) {
@@ -229,6 +239,46 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchPoetry();
   });
 
+
+  var images = document.querySelectorAll('.image-container img');
+  var currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach(function (img) {
+      img.classList.remove('active');
+    });
+    images[index].classList.add('active');
+  }
+
+  function navigate(direction) {
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+      currentIndex = images.length - 1;
+    } else if (currentIndex >= images.length) {
+      currentIndex = 0;
+    }
+
+    showImage(currentIndex);
+  }
+
+  var leftArrow = document.querySelector('.left-arrow');
+  var rightArrow = document.querySelector('.right-arrow');
+
+  leftArrow.addEventListener('click', function (event) {
+    event.preventDefault();
+    navigate(-1);
+  });
+
+  rightArrow.addEventListener('click', function (event) {
+    event.preventDefault();
+    navigate(1);
+  });
+
+  showImage(currentIndex);
+});
+    //-------------------------------------------------------------------------------------------
+
   function fetchAuthors() {
     $.ajax({
       url: "https://poetrydb.org/author",
@@ -253,9 +303,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   fetchAuthors();
 
-
-
-  //----------------------
   document.querySelector('.custom-left-container').addEventListener('click', async () => {
     try {
       const response = await fetch('https://poetrydb.org/random');
@@ -302,40 +349,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  var images = document.querySelectorAll('.image-container img');
-  var currentIndex = 0;
-
-  function showImage(index) {
-    images.forEach(function (img) {
-      img.classList.remove('active');
-    });
-    images[index].classList.add('active');
-  }
-
-  function navigate(direction) {
-    currentIndex += direction;
-
-    if (currentIndex < 0) {
-      currentIndex = images.length - 1;
-    } else if (currentIndex >= images.length) {
-      currentIndex = 0;
-    }
-
-    showImage(currentIndex);
-  }
-
-  var leftArrow = document.querySelector('.left-arrow');
-  var rightArrow = document.querySelector('.right-arrow');
-
-  leftArrow.addEventListener('click', function (event) {
-    event.preventDefault();
-    navigate(-1);
-  });
-
-  rightArrow.addEventListener('click', function (event) {
-    event.preventDefault();
-    navigate(1);
-  });
-
-  showImage(currentIndex);
-});
+ 
