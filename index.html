@@ -52,7 +52,7 @@
                     <div class="form-group">
                         <h5 for="topicSelect">Author</h5>
                         <div class="d-flex align-items-center">
-                            <select class="form-control" id="topicSelect" onchange="getAuthorTitles()">
+                            <select class="form-control" id="topicSelect">
                             </select>
                             <button class="btn btn-outline-primary ml-2 plus-button" type="button">
                                 <i class="fas fa-plus"></i>
@@ -66,7 +66,11 @@
                       
                       <div class="form-group">
                         <label class="form-head" for="lineCountSelect">Line Count</label>
-                        <select class="form-control custom-select" id="lineCountSelect"></select>
+                        <select class="form-control custom-select" id="lineCountSelect">  
+                            <option>--------</option>
+                            <option value="0-7">Short: 1-8</option>
+                            <option value="8-19">Medium: 9-20</option>
+                            <option value="20+">Long: 20+</option></select>
                       </div>                      
                     <button type="submit" class="btn btn-primary search-button" data-toggle="modal"
                         data-target="#exampleModalCenter">

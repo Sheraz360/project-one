@@ -1,4 +1,4 @@
-1. Create a HTML linked to my CSS and JavaScript file and also include any necessary CSS and JavaScript libraries (Bootstrap, jQuery, FontAwesome).
+1. Create a HTML linked to CSS and JavaScript file and also include any necessary CSS and JavaScript libraries (Bootstrap, jQuery, FontAwesome).
 
 2. Build the HTML structure:
    a. Create a navigation bar with the company logo and menu choices.
@@ -15,7 +15,7 @@
       - Update the container element with the formatted data.
 
 4. Use CSS to style the app:
-   a. Customize the navigation bar, jumbotron, form, and container to match your desired design.
+   a. Customize the navigation bar, jumbotron, form, and container to match desired design.
    b. Apply appropriate font, color, and layout styles.
 
 5. Test the app:

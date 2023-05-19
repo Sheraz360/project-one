@@ -137,6 +137,11 @@ body {
     color: var(--drkTrm);
 }
 
+.modal {
+    overflow: auto;
+    margin-top: 0px;
+}
+
 .modal-title {
     margin: 0 auto;
     text-align: center;
@@ -188,6 +193,8 @@ img.active {
     border: 1px solid black;
     margin-top: 32px;
     margin-bottom: 30px;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 .topicsForm {
@@ -197,3 +204,11 @@ img.active {
 .navbar-brand:hover {
     text-shadow: 0 0 10px white;
 }
+
+.poDiv {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  
