@@ -143,8 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
   //--------------------------------------------------------------------------------------------------
 
 
-
-
   // Search button functions which retrieve the data from the API and create modal--------------------
 
   var searchButton = document.querySelector('.search-button');
@@ -236,48 +234,10 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
+    //-------------------------------------------------------------------------------------------
+
     fetchPoetry();
   });
-
-
-  var images = document.querySelectorAll('.image-container img');
-  var currentIndex = 0;
-
-  function showImage(index) {
-    images.forEach(function (img) {
-      img.classList.remove('active');
-    });
-    images[index].classList.add('active');
-  }
-
-  function navigate(direction) {
-    currentIndex += direction;
-
-    if (currentIndex < 0) {
-      currentIndex = images.length - 1;
-    } else if (currentIndex >= images.length) {
-      currentIndex = 0;
-    }
-
-    showImage(currentIndex);
-  }
-
-  var leftArrow = document.querySelector('.left-arrow');
-  var rightArrow = document.querySelector('.right-arrow');
-
-  leftArrow.addEventListener('click', function (event) {
-    event.preventDefault();
-    navigate(-1);
-  });
-
-  rightArrow.addEventListener('click', function (event) {
-    event.preventDefault();
-    navigate(1);
-  });
-
-  showImage(currentIndex);
-});
-    //-------------------------------------------------------------------------------------------
 
   function fetchAuthors() {
     $.ajax({
@@ -302,6 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   fetchAuthors();
+
 
   document.querySelector('.custom-left-container').addEventListener('click', async () => {
     try {
@@ -345,8 +306,42 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error('Error fetching data:', error);
     }
   });
-  //--------------------
 
 
+  var images = document.querySelectorAll('.image-container img');
+  var currentIndex = 0;
 
- 
+  function showImage(index) {
+    images.forEach(function (img) {
+      img.classList.remove('active');
+    });
+    images[index].classList.add('active');
+  }
+
+  function navigate(direction) {
+    currentIndex += direction;
+
+    if (currentIndex < 0) {
+      currentIndex = images.length - 1;
+    } else if (currentIndex >= images.length) {
+      currentIndex = 0;
+    }
+
+    showImage(currentIndex);
+  }
+
+  var leftArrow = document.querySelector('.left-arrow');
+  var rightArrow = document.querySelector('.right-arrow');
+
+  leftArrow.addEventListener('click', function (event) {
+    event.preventDefault();
+    navigate(-1);
+  });
+
+  rightArrow.addEventListener('click', function (event) {
+    event.preventDefault();
+    navigate(1);
+  });
+
+  showImage(currentIndex);
+});
