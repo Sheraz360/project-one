@@ -205,10 +205,60 @@ img.active {
     text-shadow: 0 0 10px white;
 }
 
-.poDiv {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  
+.custom-wrapper {
+    margin-top: 10px;
+}
+
+.custom-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-cont {
+    width: calc(50% - 5px);
+    height: 195px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(86, 0, 129, 0.491), rgba(0, 0, 0, 0));
+}
+
+.custom-left-container {
+    padding: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-left-container h3 {
+    color: #2b0025bb;
+    text-align: center;
+    justify-content: center;
+}
+
+.custom-right-container {
+    color: #2b0025bb;
+    padding: 5px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-right-container h3,
+.custom-right-container p {
+    text-align: center;
+}
+
+.custom-right-container p {
+    margin-top: none;
+}
+
+
+.custom-form {
+    height: 500px;
+    /* Adjust the height as needed */
+    background-color: lightgray;
+    padding: 10px;
+}

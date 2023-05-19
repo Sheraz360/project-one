@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   $("button.clear-button").click(function (event) {
     event.preventDefault();
-    var poemContainer = $(".custom-container");
+    var poemContainer = $(".poem-cont");
     poemContainer.empty();
     poemContainer.css("background-color", "transparent");
   
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         method: "GET",
         success: function (response) {
           var poems = response;
-          var poemContainer = $(".custom-container");
+          var poemContainer = $(".poem-cont");
           poemContainer.empty();
 
           poemContainer.css("background-color", "rgba(153, 102, 255, 0.3)");
@@ -165,6 +165,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   fetchAuthors();
+
+
+
+//----------------------
+  document.querySelector('.custom-left-container').addEventListener('click', async () => {
+    try {
+      const response = await fetch('https://poetrydb.org/random');
+      const data = await response.json();
+  
+      if (data && data.length > 0) {
+        const poemContainer = document.querySelector('.poem-cont');
+        poemContainer.textContent = data[0].lines.join('\n');
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  });  
+//--------------------
+
+
 
   var images = document.querySelectorAll('.image-container img');
   var currentIndex = 0;
